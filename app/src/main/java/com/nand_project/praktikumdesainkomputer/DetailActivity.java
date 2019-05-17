@@ -2,6 +2,7 @@ package com.nand_project.praktikumdesainkomputer;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,8 +17,13 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         if(getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setTitle(getIntent().getStringExtra("judul"));
 
         tv_judul = findViewById(R.id.tv_judul);
         tv_deskripsi = findViewById(R.id.tv_deskripsi);
